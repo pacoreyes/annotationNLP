@@ -1,0 +1,11 @@
+{
+  "name": "Politicians Statements",
+  "short_name": "Politicians Statements",
+  "icons": [{
+    "src": "apple-touch-icon.png",
+    "sizes": "512x512"
+  }],
+  "background_color": "#ffffff",
+  "theme_color": "#ffffff",
+  "display": "fullscreen"
+}

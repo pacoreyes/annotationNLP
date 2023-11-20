@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <title>Annotate Dataset 1</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}"/>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/normalize.css') }}"/>
+  <link rel="shortcut icon" href="{{ url_for('static', filename='images/favicon.svg') }}"/>
+  <meta name="robots" content="noindex"/>
+  <meta name="googlebot" content="noindex"/>
+  <script type="module">
+      import {toggleNavigationMenuVisibility} from "../../static/js/lib/utils.mjs";
+      import {setupUI} from "../../static/js/dataset1.mjs";
+
+      toggleNavigationMenuVisibility();
+      setupUI();
+  </script>
+</head>
+<body>
+{% include 'partials/header.html' %}
+<main>
+  <h1>Annotate Dataset 1</h1>
+  <label for="datapoint">Datapoint ID:</label>
+  <input type="text" id="datapoint" placeholder="Enter a datapoint ID..." size="80"/>
+  <button type="button" id="annotate">Annotate...</button>
+  <!--ol>
+    <li><a href="/dataset1">Annotate Dataset 1</a></li>
+    <li><a href="/dataset2">Annotate Dataset 2</a></li>
+  </ol-->
+</main>
+{% include 'partials/footer.html' %}
+</body>
+</html>

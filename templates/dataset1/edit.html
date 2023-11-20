@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <title>Editor | Annotate Dataset 1</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}"/>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/normalize.css') }}"/>
+  <link rel="shortcut icon" href="{{ url_for('static', filename='images/favicon.svg') }}"/>
+  <meta name="robots" content="noindex"/>
+  <meta name="googlebot" content="noindex"/>
+  <script src="https://cdn.tiny.cloud/1/3dcg8cmd8gkf8y34nfif5nwuey7mfs0yghdxvvoyvzyjiuvx/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
+  <script type="module">
+    import {setupUI} from "../../static/js/dataset1Edit.mjs";
+
+    setupUI();
+  </script>
+  <style>
+    body {
+      background: #242436;
+    }
+
+    main {
+      margin-right: 350px; /* Width of the aside element */
+      overflow-y: scroll;
+      height: 100vh;
+      padding: 1rem 3rem 1rem 2rem;
+      background: #242436;
+    }
+
+    aside {
+      position: fixed;
+      top: 0;
+      right: 0;
+      width: 320px; /* Adjust the width as needed */
+      height: 100%;
+      padding: 1rem;
+      box-sizing: border-box;
+      background: #161625;
+      color: #e8e6e3;
+      font-size: 20px;
+    }
+
+    aside form {
+      display: flex;
+      flex-direction: column;
+    }
+
+    aside form div {
+      margin-bottom: 1em;
+    }
+
+    aside form label {
+      display: block;
+      margin-bottom: 0.5em;
+    }
+
+    aside form select {
+      width: 300px;
+    }
+
+    aside form p {
+      margin: 0;
+    }
+
+    form div label strong {
+      display: block;
+      margin-bottom: 10px; /* Add margin below the strong text */
+    }
+  </style>
+</head>
+<body>
+
+<main>
+  <textarea id="editor"></textarea>
+</main>
+<aside>
+  <h2></h2>
+  <progress id="progress1" hidden="hidden" max="100">%</progress>
+  <div id="textInfo"></div>
+  <p>Class:
+  <select id="selectDiscourseType">
+    <option value="">---</option>
+    <option value="0">MONOLOGIC</option>
+    <option value="1">DIALOGIC</option>
+  </select>
+    </p>
+  <br/>
+  <button id="saveDatapoint" type="button">Save datapoint</button>
+  <hr/>
+  <p>Tools</p>
+  <button id="removeTimeStamps" type="button">Remove Time Stamps</button>
+</aside>
+</body>
+</html>

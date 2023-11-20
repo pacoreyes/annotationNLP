@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <title>404 | Annotate Dataset 1</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}"/>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/normalize.css') }}"/>
+  <link rel="shortcut icon" href="{{ url_for('static', filename='images/favicon.svg') }}"/>
+  <link rel="shortcut icon" href="{{ url_for('static', filename='images/favicon.ico') }}"/>
+  <meta name="robots" content="noindex"/>
+  <meta name="googlebot" content="noindex"/>
+  <script type="module">
+    import {toggleNavigationMenuVisibility} from "../static/js/lib/utils.mjs";
+
+    toggleNavigationMenuVisibility();
+  </script>
+</head>
+<body>
+{% include 'partials/header.html' %}
+<main>
+  <h1>Page not found</h1>
+  <h2>error 404</h2>
+  <p>This page doesn't exist.</p>
+  <p><a href="/">Back to Index Page</a></p>
+</main>
+{% include 'partials/footer.html' %}
+</body>
+</html>

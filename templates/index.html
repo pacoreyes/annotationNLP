@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <title>Annotation Tools for NLP</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}"/>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/normalize.css') }}"/>
+  <link rel="shortcut icon" href="{{ url_for('static', filename='images/favicon.svg') }}"/>
+  <meta name="robots" content="noindex"/>
+  <meta name="googlebot" content="noindex"/>
+  <script type="module">
+      import {toggleNavigationMenuVisibility} from "../static/js/lib/utils.mjs";
+      import {setupUI} from "../static/js/index.mjs";
+
+      toggleNavigationMenuVisibility();
+      setupUI();
+  </script>
+</head>
+<body>
+{% include 'partials/header.html' %}
+<main>
+  <h1>Annotation Tools for NLP</h1>
+  <br/>
+
+  <h2>Project 1: Dataset</h2>
+    <label>Annotator:
+    <select id="team">
+      <option value="">Select annotator...</option>
+      <option value="team1">Team 1</option>
+      <option value="team2">Team 2</option>
+      <option value="team3">Team 3</option>
+      <option value="team4">Team 4</option>
+      <option value="team5">Team 5</option>
+      <option value="team7">Team 7</option>
+    </select>
+  </label><br/><br/>
+  <button type="button" id ="dataset1">Launch annotation tool</button>
+  <button type="button" id ="downloadDataset1">Download Dataset 1</button>
+  <progress id="progress1" hidden="hidden" max="100">%</progress>
+  <br/>
+  <br/>
+  <h2>Project 2: Dataset</h2>
+    <label>Annotator:
+    <select id="annotator">
+      <option value="">Select annotator...</option>
+      <option value="Abanda">Abanda</option>
+      <option value="Arayan">Arayan</option>
+      <option value="Arias">Arias</option>
+      <option value="Asgola">Asgola</option>
+      <option value="Joseph">Joseph</option>
+      <option value="Shrestha">Shrestha</option>
+      <option value="Urrego">Urrego</option>
+      <option value="Reyes">Reyes</option>
+      <option value="Pant">Pant</option>
+    </select>
+  </label><br/><br/>
+  <button type="button" id="dataset2">Launch annotation tool</button>
+  <button type="button" id ="downloadDataset2">Download Dataset 2</button>
+  <progress id="progress2" hidden="hidden" max="100">%</progress>
+</main>
+{% include 'partials/footer.html' %}
+</body>
+</html>

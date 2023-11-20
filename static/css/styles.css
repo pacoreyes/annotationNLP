@@ -1,0 +1,553 @@
+body {
+  background: #161625;
+  color: #e8e6e3;
+  font-size: 20px;
+}
+
+main {
+  margin-right: 2em;
+  margin-left: 2em;
+}
+
+a {
+  color: #5bb2ff;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+h2 {
+  margin-top: 10px
+}
+
+p {
+  line-height: 1.6em;
+}
+
+#textList li p {
+  margin: 0 0;
+}
+
+/*#textList li p span {
+  padding: 3px 3px;
+  background: #c7e5ff;
+}*/
+
+/*#textList > li:nth-of-type(odd) {
+  background: #2e2e38;
+}*/
+
+#textList > li {
+  padding: 15px 0;
+}
+
+#textList li div div {
+  overflow: scroll;
+  /*padding: 20px;*/
+}
+
+#textList li div div svg {
+  margin: 10px;
+}
+
+.displacy-word {
+  color: #faea00;
+}
+
+.displacy-tag {
+  color: #d3d3d3;
+}
+
+.displacy-label {
+  color: #b0efff;
+}
+
+.displacy-arrow {
+  color: #ffffff;
+}
+
+li.sentence_text {
+  padding: 5px 0;
+}
+
+li.sentence_lem {
+  padding: 5px 0;
+}
+
+table {
+  border-collapse: collapse;
+  margin: 1em 0 3em 0;
+}
+
+table, td, th {
+  border: 1px solid #383838;
+  padding: 5px;
+}
+
+table th {
+  background: #373741;
+}
+
+table td {
+  padding: 10px;
+}
+
+table p {
+  line-height: 1.3em;
+  margin: 0;
+}
+
+.not_interest {
+  color: #888888;
+}
+
+.of_interest {
+  color: #ffffff;
+}
+
+.text_secondary {
+  color: #737373;
+  font-size: 14px;
+}
+
+.extracted_sentence {
+  /*color: #2b3138;*/
+  color: #fff;
+  background: rgba(65, 141, 255, 0.4);
+  padding: 3px 3px;
+  margin: 0 3px;
+  border-radius: 5px;
+}
+
+.extracted_sentence:hover {
+  background: rgba(166, 75, 255, 0.5);
+}
+
+table > p {
+  margin: 0.2em 0;
+}
+
+.action_btn {
+  margin-top: 3px;
+  display: block;
+}
+
+ul#textList {
+  padding-right: 30%;
+  /*list-style-type: none;*/
+}
+
+.blink_me {
+  animation: blinker 1s linear infinite;
+}
+
+@keyframes blinker {
+  50% {
+    opacity: 0;
+  }
+}
+
+#foundEntities, #foundIssues {
+  margin: 15px 0;
+}
+
+#foundEntities span {
+  background: #373741;
+}
+
+#foundIssues span {
+  background: #4b4b57;
+}
+
+#foundEntities span, #foundIssues span {
+  display: inline-flex;
+  margin: 3px;
+  padding: 4px;
+  font-size: 14px;
+}
+
+.extracted_sentiment_pos {
+  /*color: #2b3138;*/
+  color: #fff;
+  background: rgba(115, 255, 44, 0.5);
+  padding: 3px 3px;
+  margin: 0 3px;
+  border-radius: 5px;
+}
+
+.extracted_sentiment_neu {
+  /*color: #2b3138;*/
+  /*color:#fff;*/
+  /*background: #29292f;
+  padding: 3px 3px;
+  margin: 0 3px;
+  border-radius: 5px;*/
+}
+
+.extracted_sentiment_neg {
+  /*color: #2b3138;*/
+  color: #fff;
+  background: rgba(255, 62, 62, 0.5);
+  padding: 3px 3px;
+  margin: 0 3px;
+  border-radius: 5px;
+}
+
+#fixed_tools {
+  padding: 20px 0 5px 0;
+  background: #29292f;
+  position: sticky;
+  top: 0;
+}
+
+#fixed_tools div {
+  margin: 5px 0 10px 0;
+}
+
+#fixed_tools h2 {
+  display: inline-flex;
+  margin: 0 0 0.3em 1em;
+  left: 0;
+}
+
+.textInfo {
+  display: inline-flex;
+}
+
+.extracted_sentence_idx {
+  color: #ff833e;
+}
+
+.green_positive {
+  color: #73FF2C9E;
+}
+
+.red_negative {
+  color: #FF3E3EA0;
+}
+
+#author_politician {
+  background: #383838;
+  border: solid 1px #969594;
+  padding: 3px 5px;
+  color: #cbcbcb;
+  width: 350px;
+}
+
+/* --------- header ----------- */
+header {
+  background-color: #202032;
+  position: relative;
+}
+
+header a {
+  color: #29292f;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+  display: inline;
+}
+
+.logo {
+  background-color: #5bb2ff;
+  display: block;
+}
+
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* --------- hamburger menu ------------ */
+.nav-icon {
+  padding: 14px 16px;
+  cursor: pointer;
+  width: 18px;
+  height: 18px;
+}
+
+.nav-icon span {
+  display: block;
+  width: 18px;
+  height: 2px;
+  background-color: #c7e5ff;
+  margin-bottom: 4px;
+}
+
+/* --------- nav menu ------------ */
+.menu-tray {
+  width: 100%;
+  text-align: center;
+  background-color: #e0e0e0;
+}
+
+.menu-tray ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.menu-tray li {
+  /*padding: 0.8em 0;*/
+}
+
+.menu-tray a {
+  display: block;
+  color: black;
+  padding: 10px 16px;
+  font-size: 14px;
+  text-decoration: none;
+}
+
+.menu-tray a:hover {
+  background-color: #939393;
+  color: white;
+}
+
+/* login management elements: error, messages and instructions */
+div#login-management a {
+  color: #c7e5ff;
+}
+
+div#login-management {
+  text-align: right;
+  padding: 0.3em 1em;
+  background: #000000;
+  font-size: small;
+  /*min-height: 2.5em;*/
+  max-height: 6.5em;
+}
+
+div#error {
+  color: #ff3300;
+  text-align: right;
+  padding: 0.3em 1em;
+  background: #fff4f4;
+}
+
+div.user-message {
+  background-color: rgba(0, 0, 0, 0.8);
+  text-align: center;
+  height: 100vh;
+  width: 100%;
+  position: fixed;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+div.user-message div {
+  padding: 2.5em;
+  background: #f5ffed;
+  text-align: center;
+  z-index: 2;
+  width: 50%;
+}
+
+form > div {
+  margin: 0.4em 0;
+}
+
+.breadcrumb {
+  font-size: smaller;
+}
+
+/* annotation tools */
+#textFrame {
+  background-color: #ffffff;
+  color: #000000;
+  padding: 20px;
+}
+.sentence {
+  margin: 0 4px;
+}
+
+ul{
+  /*list-style: none;*/
+  padding-left: 15px;
+}
+
+ul li {
+  margin-left: 0;
+}
+
+#texts-table {
+  width: 100%;
+  table-layout: fixed;
+}
+
+#texts-table th:first-child,
+#texts-table td:first-child {
+  width: 5%;
+}
+
+#texts-table th:nth-child(2),
+#texts-table td:nth-child(2) {
+  width: 50%;
+}
+
+#texts-table th:nth-child(n+3),
+#texts-table td:nth-child(n+3) {
+  width: calc(45% / 3);
+}
+
+.dataset {
+  color:greenyellow;
+}
+
+#dataset-overview h2 {
+  color: #ffa968;
+  font-size: medium;
+}
+
+#dataset-overview h3 {
+  color: greenyellow;
+  font-size: small;
+  margin-left: 1em;
+}
+
+#dataset-overview hr {
+  margin: 2em 0;
+}
+
+#dataset-overview table {
+  width: 100%;
+  table-layout: fixed;  /* Important: this enables consistent column widths */
+  margin-left: 1em;
+}
+
+#dataset-overview td:first-child {
+  width: 130px;
+  word-wrap: break-word;
+}
+
+#dataset-overview td:nth-child(2) {
+  width: 100%;  /* This column will take up the remaining space */
+}
+
+#dataset-overview td:last-child {
+  width: 120px;
+}
+
+/* --------- s ----------- */
+
+#newAlias {
+  margin-right: 10px;
+}
+
+#aliases {
+  display: flex;
+  flex-direction: column;
+}
+
+.alias {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+/* --------- add/remove alias ----------- */
+div.aliasRemoved, div.aliasAdded {
+  color: white; /* Optionally change text color for visibility */
+}
+
+div.aliasRemoved {
+  background-color: #FF3E3EA0;
+}
+
+div.aliasAdded {
+  background-color: #73FF2C9E;
+}
+
+/* --------- update politician layout ----------- */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.form-group label input {
+  flex-grow: 1;
+  margin-left: 10px;
+}
+
+/* --------- footer ----------- */
+/*footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    padding: 6px 0;
+    background-color: #202032;
+}
+
+footer p {
+    margin: 0;
+    padding: 0;
+    color: #6c757d;
+}*/
+
+footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 10px;
+  background-color: #202032;
+}
+
+footer p {
+  margin: 0;
+  color: #6c757d;
+}
+
+#scrollUpBtn {
+  margin-left: auto;
+  margin-right: 20px;
+}
+
+.dataset-list h3 {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 100%;
+}
+
+.dataset-list p {
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  text-overflow: ellipsis;
+}
+
+.dataset-list select, .dataset-list button {
+  margin-left: 1em;
+}
+
+.dataset-list {
+  margin-bottom: 5em;
+}
+
+.website_color {
+  color: #ffc899;
+}
+
+textarea#editor {
+  margin: 2em 0;
+  height: 90vh;
+}
