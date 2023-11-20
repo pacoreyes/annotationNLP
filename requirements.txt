@@ -1,5 +1,5 @@
 Flask==3.0.0
-google-cloud-firestore==2.13.0
+google-cloud-firestore==2.13.1
 gunicorn==21.2.0
 Werkzeug==3.0.1
 Flask-HTTPAuth==4.8.0
