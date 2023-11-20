@@ -54,7 +54,7 @@ def dataset1_edit():
   return render_template('dataset1/edit.html')
 
 
-@app.route('/api/dataset1_xyz/', methods=['PUT'])  # commented
+@app.route('/api/dataset1/', methods=['PUT'])  # commented
 def dataset1_api():
   if request.method == 'PUT':
     slots = request.get_json()

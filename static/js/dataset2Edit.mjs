@@ -367,7 +367,7 @@ async function setupUI() {
         }));
 
         const slots = {
-          "id": passage_id,
+          "id": passage_data["id"],
           "dataset2_datapoint": passageData,
           "is_accepted_dataset2_datapoint": true,
           "annotator": `IE-${annotatorName}`
