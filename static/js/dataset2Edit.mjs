@@ -264,7 +264,7 @@ function renderConsoleLog(passage_data) {
       console.log(`%c• Transition markers: ${sentence["has_transition_markers"]}`, 'color: yellow; font-weight: bold;');
       console.log(`%c• Parallelism: ${sentence["has_parallelism"]}`, 'color: yellow; font-weight: bold;');
       console.log(`%c* Logical continuity: ${sentence["has_logical_continuity"]}`, 'color: yellow; font-weight: bold;');
-      console.log(`%c* Tense/Aspect continuity: ${sentence["has_tense_or_aspect_change"]}`, 'color: yellow; font-weight: bold;');
+      console.log(`%c* Tense/Aspect change: ${sentence["has_tense_or_aspect_change"]}`, 'color: yellow; font-weight: bold;');
       console.log("%cOUTSIDE -----------------------", 'color: yellow; font-weight: bold;');
     } else if (sentence["outside"] && idx === passage_data["sentences"].length - 1) {
       console.log("%cOUTSIDE -----------------------", 'color: yellow; font-weight: bold;');
@@ -273,7 +273,7 @@ function renderConsoleLog(passage_data) {
       console.log(`%c• Transition markers: ${sentence["has_transition_markers"]}`, 'color: yellow; font-weight: bold;');
       console.log(`%c• Parallelism: ${sentence["has_parallelism"]}`, 'color: yellow; font-weight: bold;');
       console.log(`%c* Logical continuity: ${sentence["has_logical_continuity"]}`, 'color: yellow; font-weight: bold;');
-      console.log(`%c* Tense/Aspect continuity: ${sentence["has_tense_or_aspect_change"]}`, 'color: yellow; font-weight: bold;');
+      console.log(`%c* Tense/Aspect change: ${sentence["has_tense_or_aspect_change"]}`, 'color: yellow; font-weight: bold;');
       console.log(`%c${sentence["sent_index"]}: ${sentence["sentence"]}`, 'color: yellow; font-weight: bold;');
     } else if (sentence["root"]) {
       console.log(`%c${sentence["sent_index"]}: ${sentence["sentence"]}`, 'color: orange; font-weight: bold;');
@@ -285,14 +285,14 @@ function renderConsoleLog(passage_data) {
         console.log(`%c• Transition markers: ${sentence["has_transition_markers"]}`, 'color: white; font-weight: bold;');
         console.log(`%c• Parallelism: ${sentence["has_parallelism"]}`, 'color: white; font-weight: bold;');
         console.log(`%c* Logical continuity: ${sentence["has_logical_continuity"]}`, 'color: white; font-weight: bold;');
-        console.log(`%c* Tense/Aspect continuity: ${sentence["has_tense_or_aspect_change"]}`, 'color: white; font-weight: bold;');
+        console.log(`%c* Tense/Aspect change: ${sentence["has_tense_or_aspect_change"]}`, 'color: white; font-weight: bold;');
       } else if (sentence["sent_index"] > rootSentIdx) {  // after root
         console.log(`%c• Coreference: ${sentence["has_coreference"]}`, 'color: white; font-weight: bold;');
         console.log(`%c• Semantic chain: ${sentence["has_semantic_chain"]}`, 'color: white; font-weight: bold;');
         console.log(`%c• Transition markers: ${sentence["has_transition_markers"]}`, 'color: white; font-weight: bold;');
         console.log(`%c• Parallelism: ${sentence["has_parallelism"]}`, 'color: white; font-weight: bold;');
         console.log(`%c* Logical continuity: ${sentence["has_logical_continuity"]}`, 'color: white; font-weight: bold;');
-        console.log(`%c* Tense/Aspect continuity: ${sentence["has_tense_or_aspect_change"]}`, 'color: white; font-weight: bold;');
+        console.log(`%c* Tense/Aspect change: ${sentence["has_tense_or_aspect_change"]}`, 'color: white; font-weight: bold;');
         console.log(`${sentence["sent_index"]}: ${sentence["sentence"]}`);
       }
     }
