@@ -379,7 +379,7 @@ async function setupUI() {
       // Case 2: Reject passage: label it as "is_accepted_dataset2_datapoint" = false
       } else if (buttonEl.id === "rejectDatapoint") {
         const slots = {
-          "id": passage_id,
+          "id": passage_data["id"],
           "dataset2_datapoint": "", // Remove the attribute from the passage record
           "is_accepted_dataset2_datapoint": false,
           "annotator": `IE-${annotatorName}`
@@ -396,7 +396,7 @@ async function setupUI() {
       // Case 4: Undo, remove any label related to dataset2 from the passage
       } else if (buttonEl.id === "undoDatapoint") {
         const slots = {
-          "id": passage_id,
+          "id": passage_data["id"],
           "dataset2_datapoint": "", // Remove the attribute from the passage record
           "is_accepted_dataset2_datapoint": "", // Remove the attribute from the passage record
           "annotator": ""
