@@ -113,18 +113,39 @@ def retrieve_dataset_2(_annotator_id=None):
 
   if _annotator_id is None:
     # retrieve texts ordered by "is_accepted_dataset2_datapoint"
-    docs = source_passages_ref.order_by("is_accepted_dataset2_datapoint").stream()
+    docs = (source_passages_ref
+            .where("is_accepted_dataset2_datapoint", "==", True).stream())
+    recs = [doc.to_dict() for doc in docs]
+    for rec in recs:
+      text = []
+      for sent in rec["dataset2_datapoint"]:
+        slots = {
+          "role": sent["role"],
+          "sentence": sent["sentence"]
+        }
+        text.append(slots)
+
+      slots = {
+        "id": rec["id"],
+        "text": text,
+        "metadata": {
+          "text_id": rec["text_id"],
+          "source": rec["url"],
+          "annotator": rec["annotator"]
+        },
+      }
+      if rec.get("publication-date"):
+        slots["metadata"]["publication-date"] = rec["publication-date"]
+      dataset2.append(slots)
   else:
     # retrieve texts with "annotator" equal to "IE-[_annotator_id]" ordered by "is_accepted_dataset2_datapoint"
     docs = (source_passages_ref.where("annotator", "==", f"IE-{_annotator_id}")
             .order_by("is_accepted_dataset2_datapoint").stream())
-
-  recs = [doc.to_dict() for doc in docs]
-
-  for idx, rec in enumerate(recs):
-    slots = {
-      "id": rec["id"],
-      "is_accepted": rec["is_accepted_dataset2_datapoint"],
-    }
-    dataset2.append(slots)
+    recs = [doc.to_dict() for doc in docs]
+    for rec in recs:
+      slots = {
+        "id": rec["id"],
+        "is_accepted": rec["is_accepted_dataset2_datapoint"]
+      }
+      dataset2.append(slots)
   return dataset2
