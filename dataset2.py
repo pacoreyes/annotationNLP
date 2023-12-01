@@ -99,21 +99,26 @@ def update_passage(slots):
   return True
 
 
-def retrieve_dataset_2(_team_id):
+def retrieve_dataset_2(_annotator_id=None):
   """
   Retrieve the whole dataset1.
   Args:
-    _team_id: Number of the team.
+    _annotator_id: Number of the annotator.
 
   Returns:
 
   """
   source_passages_ref = firestore_db.collection('passages')
-  # retrieve texts with "annotator" equal to "IE-team2" ordered by "dataset1_class"
-  docs = (source_passages_ref.where("annotator", "==", f"IE-{_team_id}")
-          .order_by("is_accepted_dataset2_datapoint").stream())
-
   dataset2 = []
+
+  if _annotator_id is None:
+    # retrieve texts ordered by "is_accepted_dataset2_datapoint"
+    docs = source_passages_ref.order_by("is_accepted_dataset2_datapoint").stream()
+  else:
+    # retrieve texts with "annotator" equal to "IE-[_annotator_id]" ordered by "is_accepted_dataset2_datapoint"
+    docs = (source_passages_ref.where("annotator", "==", f"IE-{_annotator_id}")
+            .order_by("is_accepted_dataset2_datapoint").stream())
+
   recs = [doc.to_dict() for doc in docs]
 
   for idx, rec in enumerate(recs):

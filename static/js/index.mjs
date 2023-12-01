@@ -11,7 +11,7 @@ function setupUI() {
     // set value of team in teamSelector to team
     teamSelector.value = localStorage.getItem("team");
   }
-  teamSelector.addEventListener("change", (event) => {
+  teamSelector.addEventListener("change", () => {
     if (teamSelector.value) {
       // save team in localStorage
       localStorage.setItem("team", document.getElementById("team").value);
@@ -23,7 +23,7 @@ function setupUI() {
     // set value of team in teamSelector to team
     annotatorSelector.value = localStorage.getItem("annotator");
   }
-  annotatorSelector.addEventListener("change", (event) => {
+  annotatorSelector.addEventListener("change", () => {
     if (annotatorSelector.value) {
       // save team in localStorage
       localStorage.setItem("annotator", document.getElementById("annotator").value);
@@ -39,7 +39,7 @@ function setupUI() {
     // set value of team in teamSelector to team
     annotatorSelector.value = localStorage.getItem("annotator");
   }
-  annotatorSelector.addEventListener("change", (event) => {
+  annotatorSelector.addEventListener("change", () => {
     if (annotatorSelector.value) {
       // save team in localStorage
       localStorage.setItem("annotator", document.getElementById("annotator").value);
@@ -73,21 +73,30 @@ function setupUI() {
    --------------------------------------- **/
   const btnDownload1 = document.getElementById("downloadDataset1");
   const btnDownload2 = document.getElementById("downloadDataset2");
-  [btnDownload1, btnDownload2].forEach((btns) => {
+  const btnIndivDownload2 = document.getElementById("downloadIndividualDataset2");
+
+  [btnDownload1, btnDownload2, btnIndivDownload2].forEach((btns) => {
     btns.addEventListener("click", async function (event) {
-      let datasetName, progressBar, url;
+      let datasetName, fileName, progressBar, url;
+
       if (event.target.id === "downloadDataset1" && teamSelector.value) {
         datasetName = "dataset1";
+        fileName = `${datasetName}_${teamSelector.value}_raw.jsonl`;
         progressBar = "progress1";
         url = `/api/${datasetName}/download/${teamSelector.value}`;
       } else if (event.target.id === "downloadDataset2" && annotatorSelector.value) {
         datasetName = "dataset2";
+        fileName = `${datasetName}_raw.jsonl`;
+        progressBar = "progress2";
+        url = `/api/${datasetName}/download/all`;
+      } else if (event.target.id === "downloadIndividualDataset2" && annotatorSelector.value) {
+        datasetName = "dataset2";
+        fileName = `${datasetName}_${annotatorSelector.value}_raw.jsonl`;
         progressBar = "progress2";
         url = `/api/${datasetName}/download/${annotatorSelector.value}`;
       } else {
         alert("Please select an Annotator");
       }
-      //const url = `/api/${datasetName}/download/${teamSelector.value}`;
       let dataset = await fetchData(url, progressBar);
 
       // Convert each object to a string and join them with newline characters
@@ -97,7 +106,7 @@ function setupUI() {
       // Create a link element
       const link = document.createElement('a');
       // Set the download attribute with a filename
-      link.download = `${datasetName}_raw.jsonl`;
+      link.download = fileName;
       // Create a URL for the Blob and set it as the href attribute
       link.href = window.URL.createObjectURL(blob);
       // Append the link to the body

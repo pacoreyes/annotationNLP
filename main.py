@@ -38,6 +38,41 @@ def index():
   return render_template("index.html")
 
 
+@app.route('/about')
+def about():
+  """
+  Route for displaying the about page.
+
+  Returns:
+  - rendered template (HTML): About page template.
+  """
+  return render_template('about.html')
+
+
+@app.errorhandler(404)
+def page_not_found(error):
+  """
+  Route for handling 404 error page.
+
+  Returns:
+  - rendered template (HTML): 404 error page template.
+  """
+  print(error)
+  return render_template("404.html"), 404
+
+
+@auth.verify_password
+def verify(username, password):
+  if not (username and password):
+    return False
+  return USER_DATA.get("username") == username and USER_DATA.get("password") == password
+
+
+"""-----------------------------------------------------------
+Dataset 1
+-----------------------------------------------------------"""
+
+
 @app.route('/dataset1')
 def display_dataset1():
   return render_template('dataset1/index.html')
@@ -129,48 +164,22 @@ def dataset2_api(passage_id=None):
     return jsonify(response)
 
 
-@app.route('/api/dataset2/download/<team_id>')
-def download_dataset2_api(team_id):
+@app.route('/api/dataset2/download/<annotator_id>')
+def download_dataset2_api(annotator_id):
   """
   API endpoint for retrieving dataset1.
   Args:
-    team_id: Number of the team.
+    annotator_id: Number of the team.
 
   Returns:
     dataset1 (json): JSON response containing the dataset1.
   """
-  dataset2 = retrieve_dataset_2(team_id)
+
+  if annotator_id == "all":
+    dataset2 = retrieve_dataset_2()
+  else:
+    dataset2 = retrieve_dataset_2(annotator_id)
   return jsonify(dataset2)
-
-
-@app.route('/about')
-def about():
-  """
-  Route for displaying the about page.
-
-  Returns:
-  - rendered template (HTML): About page template.
-  """
-  return render_template('about.html')
-
-
-@app.errorhandler(404)
-def page_not_found(error):
-  """
-  Route for handling 404 error page.
-
-  Returns:
-  - rendered template (HTML): 404 error page template.
-  """
-  print(error)
-  return render_template("404.html"), 404
-
-
-@auth.verify_password
-def verify(username, password):
-  if not (username and password):
-    return False
-  return USER_DATA.get("username") == username and USER_DATA.get("password") == password
 
 
 # Start the app

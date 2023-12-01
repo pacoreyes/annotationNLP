@@ -75,7 +75,7 @@ function createListFromArray(array) {
  *
  * @param {string} val
  * @param {string} txt
- * @param {string} classValues [optional]
+ * @param classValues
  *
  * @return {object}
  */
@@ -368,9 +368,8 @@ async function getWikidataLabelByQID(qid) {
 }
 
 export {
-  createCounterWidget, toggleNavigationMenuVisibility, createListFromMap,
-  createListFromArray, showProgressBar, hideProgressBar, fillListFromMap,
-  createOptionsWithIssuesParents, date2IsoDateString, fetchData,
+  createCounterWidget, toggleNavigationMenuVisibility, createListFromMap, createListFromArray, showProgressBar,
+  hideProgressBar, fillListFromMap, createOptionsWithIssuesParents, date2IsoDateString, fetchData,
   fillSelectWithOptions, scrollToTop, formatDate, timestamp2String, getEnumValue, fillSelectWithDiscourseTypeEl,
   fillSelectEl, multipleSelectionWidget, pushData, getWikidataLabelByQID
 };
