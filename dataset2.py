@@ -69,7 +69,7 @@ def retrieve_random_passage():
     passage_id = id_with_zeros(random_number)
     passage = retrieve_passage(passage_id, with_original_text_split=True)
     # Check for the desired condition and return the passage if met
-    if not passage.get("is_accepted_dataset2_datapoint") and "https://transcripts.cnn.com" not in passage["url"]:
+    if "is_accepted_dataset2_datapoint" not in passage and "https://transcripts.cnn.com" not in passage["url"]:
       return passage
     attempts += 1
   return None
